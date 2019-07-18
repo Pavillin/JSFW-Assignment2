@@ -2,7 +2,7 @@
 
 A survey website built using Node.js, the express generator, and pug templating engine.
 
-* [Live Link (Pending)](#)
+* [Live Link](https://jsfw-assignment2.herokuapp.com/)
 
 ## Built With
 
