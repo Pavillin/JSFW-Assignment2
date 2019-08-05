@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  h1 Create a new Survey
+
+  form(method="POST")
+    input(name="title" placeholder="Survey Title")
+    input(name="description" placeholder="Survey Description")
+    select#choose(name='type', required='')
+      option(value='', disabled='', selected='') Survey Type
+      option(value='Agree/Disagree') Agree/Disagree
+      option(value='Multiple Choice') Multiple Choice
+
+    button(type="submit") Create Survey

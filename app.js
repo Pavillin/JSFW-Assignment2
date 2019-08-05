@@ -31,6 +31,29 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Express Session for persistent authentication
+app.use(
+  session({
+    secret: 'superdupersecret',
+    resave: false,
+    saveUninitialized: true
+  })
+);
+app.use(passport.initialize()); // Initiaize Passport first
+app.use(passport.session()); // Use passport with session
+
+app.use((req, res, next) => {
+  res.locals.isAuthenticated= req.isAuthenticated();
+});
+
+// use static authenticate method of model in LocalStrategy
+passport.use(new LocalStrategy(User.authenticate()));
+
+// use static serialize and deserialize of model for passport session support
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+app.use('/', authRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
