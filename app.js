@@ -3,9 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var session = require('express-session');
-var mongoose = require('mongoose');
-var passport = require('passport');
+const session = require('express-session');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const mongoose = require('mongoose');
+const User = require('./models/user');
 
 mongoose.connect(
   `mongodb+srv://test:test123@jsfw-class-ejvhe.mongodb.net/test?retryWrites=true&w=majority`,
@@ -14,10 +16,11 @@ mongoose.connect(
 
 var db = mongoose.connection;
 db.on('error', err => console.error(err));
-db.once('open', () => console.log('Connected to Mongodb'))
+db.once('open', () => console.log('Connected to Mongodb'));
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var authRouter = require('./routes/auth');
 
 var app = express();
 
@@ -34,7 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Express Session for persistent authentication
 app.use(
   session({
-    secret: 'superdupersecret',
+    secret: 'kjnhfwkejsdhfjchw3hruy23iyriuwyefkcnskdbchhbf3uhfbubjnjn',
     resave: false,
     saveUninitialized: true
   })
@@ -43,7 +46,8 @@ app.use(passport.initialize()); // Initiaize Passport first
 app.use(passport.session()); // Use passport with session
 
 app.use((req, res, next) => {
-  res.locals.isAuthenticated= req.isAuthenticated();
+  res.locals.isAuthenticated = req.isAuthenticated();
+  next();
 });
 
 // use static authenticate method of model in LocalStrategy
