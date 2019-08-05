@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  ul
+    li: a(href="/surveys") Go Back
+    li: a(href=`/surveys/${survey._id}/edit`) Edit Survey
+    li: a(href=`/surveys/${survey._id}/delete`) Delete Survey
+  h1= survey.title
+  h2 #{survey.class.title} - #{survey.class.courseCode}
+
+  h4= survey.grade
+  h5= survey.class.teacher
