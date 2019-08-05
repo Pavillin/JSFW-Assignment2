@@ -10,8 +10,10 @@ const surveySchema = new Schema({
     type: String
   },
   type: {
-    type: String
+    type: String, required: true
   },
+  questions: [{type: Schema.ObjectId, ref: 'Question'}],
+  author: {type: String, required: true}
 });
 
 const Survey = mongoose.model('Survey', surveySchema);

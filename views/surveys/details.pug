@@ -6,7 +6,7 @@ block content
     li: a(href=`/surveys/${survey._id}/edit`) Edit Survey
     li: a(href=`/surveys/${survey._id}/delete`) Delete Survey
   h1= survey.title
-  h2 #{survey.class.title} - #{survey.class.courseCode}
+  h2 #{survey.title} - #{survey.description}
 
-  h4= survey.grade
-  h5= survey.class.teacher
+  h4 Type: #{survey.type}
+  h5 Author: #{survey.author}

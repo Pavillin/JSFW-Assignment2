@@ -4,10 +4,12 @@ block content
   h1= survey.title
 
   form(method="POST")
-    input(name="title" value=survey.title placeholder="title of survey")
-    input(name="grade" value=survey.grade type="number")
-    input(name="class.title" value=survey.class.title placeholder="Class Title")
-    input(name="class.courseCode" value=survey.class.courseCode placeholder="CourseCode")
-    input(name="class.teacher" value=survey.class.teacher placeholder="Teacher")
+    input(name="title" value=survey.title placeholder="Survey Title")
+    input(name="survey.description" value=survey.description placeholder="Description")
+    input(name="survey.author" value=survey.author placeholder="Author")
+    select#choose(name='type', required='')
+      option(value='', disabled='', selected='') Survey Type
+      option(value='Agree/Disagree') Agree/Disagree
+      option(value='Multiple Choice') Multiple Choice
 
     button(type="submit") Save Survey
