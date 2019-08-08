@@ -10,7 +10,7 @@ const mongoose = require('mongoose');
 const User = require('./models/user');
 
 mongoose.connect(
-  `mongodb://heroku_bjfx5nnn:jewel03/27@ds261077.mlab.com:61077/heroku_bjfx5nnn`,
+  `mongodb://alex:albest1@ds261077.mlab.com:61077/heroku_bjfx5nnn`,
   { useNewUrlParser: true }
 );
 
