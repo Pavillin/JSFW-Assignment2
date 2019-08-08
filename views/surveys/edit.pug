@@ -11,5 +11,8 @@ block content
       option(value='', disabled='', selected='') Survey Type
       option(value='Agree/Disagree') Agree/Disagree
       option(value='Multiple Choice') Multiple Choice
-
+    ul
+      each question in survey.questions
+        li
+          a(href=`/surveys/${survey._id}`)= survey.question
     button(type="submit") Save Survey

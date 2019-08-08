@@ -12,7 +12,7 @@ const surveySchema = new Schema({
   type: {
     type: String, required: true
   },
-  questions: [{type: Schema.ObjectId, ref: 'Question'}],
+  questions: String,
   author: {type: String, required: true}
 });
 
