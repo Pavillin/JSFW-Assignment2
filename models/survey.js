@@ -1,6 +1,10 @@
+/*
+COMP2068 ASSIGNMENT 2
+CREATED BY DYLAN SPRAGUE, KEON MUELLERCHEN, ALEX BESTER
+*/
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+//mongodb survey structure
 const surveySchema = new Schema({
   title: {
     type: String,

@@ -1,5 +1,7 @@
 body {
   padding: 50px;
+  background-color: #2B2D2F;
+  background-image: url("../images/TunnelSnake.jpg");
   text-align: center;
 }
 
@@ -8,13 +10,27 @@ a {
 }
 h1 {
   text-align: center;
+  color: grey;
+}
+
+p {
+  padding: 2%;
+  text-align: center;
+  color: grey;
 }
 
 ul {
-  padding: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 5%;
+  padding-right: 5%;
   list-style-type: none;
 }
 .listStyle {
   border-style: solid;
-  padding: 1%;
+  border-color: #C9F6FF;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 5%;
+  padding-right: 5%;
 }

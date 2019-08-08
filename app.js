@@ -1,3 +1,9 @@
+/*
+COMP2068 ASSIGNMENT 2
+TUNNEL SNAKES SURVEY WEBSITE
+ALLOWS THE CREATION AND SAVING OF SURVEYS TO A DATABASE
+CREATED BY DYLAN SPRAGUE, KEON MUELLERCHEN, ALEX BESTER
+*/
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');

@@ -1,8 +1,8 @@
-# JavaScript Fromeworks Assignment 2
+# JavaScript Frameworks Assignment 2
 
 A survey website built using Node.js, the express generator, and pug templating engine.
 
-* [Live Link](https://jsfw-assignment2.herokuapp.com/)
+* [Live Link](https://comp2068tunnelsnakes.herokuapp.com)
 
 ## Built With
 

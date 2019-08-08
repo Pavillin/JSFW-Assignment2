@@ -2,13 +2,11 @@ extends ../layout
 
 block content
   ul
-    li: a(href="/surveys") Go Back
-    li: a(href=`/surveys/${survey._id}/edit`) Edit Survey
-    li: a(href=`/surveys/${survey._id}/delete`) Delete Survey
-  h1= survey.title
-  h2 #{survey.title} - #{survey.description}
-
-  h4 Type: #{survey.type}
-  h5 Author: #{survey.author}
-  ul
-    li #{survey.questions}
+    li(class='listStyle'): a(href="/surveys") Go Back
+    li(class='listStyle'): a(href=`/surveys/${survey._id}/edit`) Edit Survey
+    li(class='listStyle'): a(href=`/surveys/${survey._id}/delete`) Delete Survey
+  h1 Title: #{survey.title}
+  h1 Description: #{survey.description}
+  h1 Type: #{survey.type}
+  h1 Author: #{survey.author}
+  h1 Questions: #{survey.questions}
